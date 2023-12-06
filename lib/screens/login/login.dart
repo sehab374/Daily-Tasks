@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'login-tab.dart';
 import 'sign-up-tab.dart';
 
@@ -14,7 +13,7 @@ class Login extends StatelessWidget {
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
-              title: Text("To Do List"),
+              title: Text("Daily Tasks"),
               bottom: TabBar(tabs: [
                 Tab(
                   child: Text("Login",

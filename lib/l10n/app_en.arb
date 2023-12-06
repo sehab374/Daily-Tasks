@@ -1,0 +1,16 @@
+{
+  "hello": "Hello",
+  "language": "Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "themeing": "Themeing",
+  "light": "Light",
+  "dark": "Dark",
+
+
+  "add_task": "Add New Task",
+  "add_title": "enter your task",
+  "add_desc": "enter description",
+  "add_date": "Select Date",
+  "add_task_botton": "Add Task"
+}

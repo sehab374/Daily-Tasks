@@ -9,6 +9,7 @@ import 'package:todo_f_connection/screens/login/login.dart';
 import '../screens/settings/settings_tab.dart';
 import '../screens/tasks/add_task_bottom_sheet.dart';
 import '../screens/tasks/tasks_tab.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeLayout extends StatefulWidget {
   static const String routeName = "lauout";
@@ -30,7 +31,7 @@ class _HomeLayoutState extends State<HomeLayout> {
       ////////////////////for floating action buttom background display
       extendBody: true,
       appBar:
-          AppBar(title: Text("Hello  ${provider.userModel?.name}"), actions: [
+          AppBar(title: Text("${AppLocalizations.of(context)!.hello} ${provider.userModel?.name}"), actions: [
         IconButton(
             onPressed: () {
               FirebaseAuth.instance.signOut();

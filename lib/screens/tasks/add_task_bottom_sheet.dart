@@ -2,9 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 import '../../models/task_model.dart';
 import '../../shared/firebase/firebase_functions.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class AddTaskBottomSheet extends StatefulWidget {
   @override
@@ -22,7 +23,6 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Form(
@@ -33,7 +33,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              "Add New Task",
+              AppLocalizations.of(context)!.add_task,
               textAlign: TextAlign.center,
               style: GoogleFonts.poppins(
                   fontSize: 20,
@@ -51,7 +51,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 },
                 controller: titleController,
                 decoration: InputDecoration(
-                    hintText: "enter your task",
+                    hintText: AppLocalizations.of(context)!.add_title,
                     hintStyle: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.grey),
                     focusedBorder: UnderlineInputBorder(
@@ -69,7 +69,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 },
                 controller: descriptionController,
                 decoration: InputDecoration(
-                    hintText: "enter description",
+                    hintText:AppLocalizations.of(context)!.add_desc,
                     hintStyle: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.grey),
                     focusedBorder: UnderlineInputBorder(
@@ -79,7 +79,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
             SizedBox(
               height: 10,
             ),
-            Text("Select Date",
+            Text(AppLocalizations.of(context)!.add_date,
                 style: GoogleFonts.poppins(
                     fontSize: 15,
                     fontWeight: FontWeight.w400,
@@ -105,7 +105,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     TaskModel taskModel = TaskModel(
-                      userId: FirebaseAuth.instance.currentUser!.uid,
+                        userId: FirebaseAuth.instance.currentUser!.uid,
                         title: titleController.text,
                         description: descriptionController.text,
                         date: DateUtils.dateOnly(selectedDate)
@@ -120,7 +120,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     Navigator.pop(context);
                   }
                 },
-                child: Text("Add Task"))
+                child: Text(AppLocalizations.of(context)!.add_task_botton))
           ],
         ),
       ),
